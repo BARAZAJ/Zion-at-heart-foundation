@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Zion at Heart Foundation</title>
+    <meta name="description" content="Explore the impactful work of Zion at Heart Foundation in empowering communities across Jinja, Uganda through education, healthcare, and development programs.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* Header */
+
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu li a:hover {
+            color: #e74c3c;
+        }
+
+        .nav-menu li a.active {
+            color: #e74c3c;
+        }
+
+        .nav-menu li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #e74c3c;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .work-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .work-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .work-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            padding: 60px;
+            background: #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e74c3c;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .projects-section {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-category {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .project-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .project-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-ongoing {
+            background: #e8f5e8;
+            color: #27ae60;
+        }
+
+        .status-completed {
+            background: #e3f2fd;
+            color: #2196f3;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 60px;
+            border-radius: 20px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .impact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .impact-item h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .impact-item p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #e74c3c;
+            border: 2px solid #e74c3c;
+        }
+
+        .cta-button.secondary:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+        /* Footer */
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 40px 20px;
+            }
+            .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .work-intro h2 {
+                font-size: 2rem;
+            }
+            .impact-section h2 {
+                font-size: 2rem;
+            }
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            .cta-button {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <img src="https://public.youware.com/users-website-assets/prod/9a3f5b20-92f7-4a84-b01d-54eae762eb3f/e1b353f117c546bbb60aa27bc3d7f150" alt="Zion at Heart Foundation Logo" class="logo-img">
+                <div class="logo-text">Zion at Heart Foundation</div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="work.html" class="active">Our work</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Our Work</h1>
+        <p>Discover the impact we're making in communities across Jinja, Uganda through our various programs and initiatives</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Work Introduction -->
+        <section class="work-intro">
+            <h2>Empowering Communities Together</h2>
+            <p>Zion at Heart Foundation is dedicated to empowering communities in Jinja, Uganda by providing access to education, healthcare, and vocational training. Our goal is to create sustainable solutions that address poverty, inequality, and social
+                injustices, ultimately improving the lives of those in need.</p>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <span class="stat-number">500+</span>
+                <div class="stat-label">Lives Impacted</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">25+</span>
+                <div class="stat-label">Programs Launched</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">15</span>
+                <div class="stat-label">Community Partners</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">5</span>
+                <div class="stat-label">Years of Service</div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2 class="section-title">Our Key Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://public.youware.com/users-website-assets/prod/9a3f5b20-92f7-4a84-b01d-54eae762eb3f/cdb3cb0135d84d89a3758ab6979d8b65.jpg" alt="Education Initiative" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Education</div>
+                        <h3>Community Learning Centers</h3>
+                        <p>Establishing learning centers in underserved communities to provide quality education and vocational training opportunities for children and adults.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2022</span>
+                            <span class="project-status status-ongoing">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://2cf2b334be.cbaul-cdnwnd.com/bbeaa923f81527858707e83019dc4b30/200000031-8770e8770f/IMG-20241228-WA0038.webp?ph=2cf2b334be" alt="Women Empowerment" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Women's Empowerment</div>
+                        <h3>Women's Economic Empowerment</h3>
+                        <p>Providing microfinance opportunities, business training, and leadership development programs specifically designed for women in our communities.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2021</span>
+                            <span class="project-status status-ongoing">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://2cf2b334be.cbaul-cdnwnd.com/bbeaa923f81527858707e83019dc4b30/200000020-1848a1848c/images-pexels-com-photos-6694543-pexels-photo-6694543-auto-compress-cs-tinysrgb-dpr-2-h-650-w-940.webp?ph=2cf2b334be" alt="Youth Development" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Youth Development</div>
+                        <h3>Youth Leadership Program</h3>
+                        <p>Mentoring and developing the next generation of community leaders through skills training, mentorship, and leadership development workshops.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2020</span>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://public.youware.com/users-website-assets/prod/9a3f5b20-92f7-4a84-b01d-54eae762eb3f/cdb3cb0135d84d89a3758ab6979d8b65.jpg" alt="Healthcare Initiative" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Healthcare</div>
+                        <h3>Community Health Outreach</h3>
+                        <p>Mobile health clinics and community health education programs bringing essential healthcare services to remote and underserved areas.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2023</span>
+                            <span class="project-status status-ongoing">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://2cf2b334be.cbaul-cdnwnd.com/bbeaa923f81527858707e83019dc4b30/200000031-8770e8770f/IMG-20241228-WA0038.webp?ph=2cf2b334be" alt="Sustainable Development" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Environment</div>
+                        <h3>Clean Water Initiative</h3>
+                        <p>Installing clean water systems and teaching sustainable water management practices to ensure long-term access to safe drinking water.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2022</span>
+                            <span class="project-status status-ongoing">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://2cf2b334be.cbaul-cdnwnd.com/bbeaa923f81527858707e83019dc4b30/200000020-1848a1848c/images-pexels-com-photos-6694543-pexels-photo-6694543-auto-compress-cs-tinysrgb-dpr-2-h-650-w-940.webp?ph=2cf2b334be" alt="Community Building" class="project-image">
+                    <div class="project-content">
+                        <div class="project-category">Community</div>
+                        <h3>Community Building Initiative</h3>
+                        <p>Organizing community events, festivals, and collaborative projects that strengthen social bonds and promote unity among diverse groups.</p>
+                        <div class="project-meta">
+                            <span class="project-date">Started 2019</span>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <h2>Our Impact</h2>
+            <p>Through our dedicated work and community partnerships, we're creating meaningful change that extends far beyond individual programs. Here's how we're making a difference:</p>
+
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Education Access</h4>
+                    <p>Increased school enrollment by 40% in our target communities</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>Economic Growth</h4>
+                    <p>Supported 200+ women to start their own businesses</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h4>Clean Water</h4>
+                    <p>Provided clean water access to 15 communities</p>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Healthcare</h4>
+                    <p>Delivered healthcare services to 1,000+ individuals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Join Us in Making a Difference</h2>
+            <p>Together, we can continue to create positive change and empower more communities. Get involved today.</p>
+            <a href="contact.html" class="cta-button">Partner With Us</a>
+            <a href="testimonials.html" class="cta-button secondary">Read Success Stories</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Zion at Heart Foundation. All rights reserved.</p>
+        <p>Empowering Communities in Jinja, Uganda | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <script src="https://lib.youware.com/youware-lib-consumer.1752562065.js" id="yourware-lib"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
